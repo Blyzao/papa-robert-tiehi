@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
@@ -33,10 +33,10 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { font-family: var(--text); color: var(--ink); background: var(--ivory); font-size: 18px; line-height: 1.6; overflow-x: hidden; }
+  body { font-family: var(--text); color: var(--ink); background: var(--ivory); font-size: 21px; line-height: 1.65; overflow-x: hidden; }
   body.ferme { overflow: hidden; }
   img { display: block; max-width: 100%; }
-  section { position: relative; }
+  section, footer { position: relative; overflow-x: clip; }
 
   /* ---------- Shared ornaments ---------- */
   .ornement { display: block; width: 180px; height: 18px; margin: 14px auto; color: var(--gold); }
@@ -138,8 +138,8 @@
   .diaporama img:nth-child(even).actif { animation-name: kenburns2; }
   @keyframes kenburns { from { transform: scale(1.18) translate(2%, 2%); } to { transform: scale(1.02) translate(0, 0); } }
   @keyframes kenburns2 { from { transform: scale(1.02) translate(-1%, 0); } to { transform: scale(1.18) translate(1%, -2%); } }
-  .recit p { margin-bottom: 18px; text-align: justify; hyphens: auto; }
-  .recit p:first-child::first-letter { font-family: var(--serif); font-weight: 600; float: left; font-size: 74px; line-height: .8; padding: 8px 10px 0 0; color: var(--gold); }
+  .recit p { margin-bottom: 20px; }
+  .recit p:first-child::first-letter { font-family: var(--serif); font-weight: 600; float: left; font-size: 84px; line-height: .8; padding: 8px 10px 0 0; color: var(--gold); }
   .recit em { color: var(--navy); }
 
   /* ---------- Three pillars ---------- */
@@ -148,7 +148,7 @@
   .pilier::before { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(217,189,127,.15); pointer-events: none; }
   .pilier svg { width: 54px; height: 54px; color: var(--gold-light); margin: 0 auto 18px; display: block; }
   .pilier h3 { font-family: var(--serif); font-weight: 600; font-size: 25px; letter-spacing: .06em; color: var(--ivory); }
-  .pilier p { font-size: 17px; color: #d8d2c4; margin-top: 10px; line-height: 1.55; }
+  .pilier p { font-size: 19px; color: #d8d2c4; margin-top: 10px; line-height: 1.55; }
 
   /* ---------- Quote band ---------- */
   .citation { text-align: center; padding: 96px 24px; background: var(--ivory-dark); }
@@ -160,9 +160,9 @@
   .medaillon { position: sticky; top: 40px; text-align: center; }
   .medaillon .rond { width: 240px; height: 240px; border-radius: 50%; overflow: hidden; margin: 0 auto; border: 2px solid var(--gold); box-shadow: 0 0 0 8px var(--ivory), 0 0 0 9px rgba(184,146,74,.5); }
   .medaillon .rond img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; }
-  .medaillon p { font-family: var(--serif); font-style: italic; color: var(--muted); margin-top: 22px; font-size: 19px; }
+  .medaillon p { font-family: var(--serif); font-style: italic; color: var(--muted); margin-top: 22px; font-size: 21px; }
   .familles { list-style: none; }
-  .familles li { position: relative; padding: 9px 0 9px 26px; border-bottom: 1px solid rgba(184,146,74,.18); font-size: 17px; line-height: 1.45; }
+  .familles li { position: relative; padding: 9px 0 9px 26px; border-bottom: 1px solid rgba(184,146,74,.18); font-size: 19px; line-height: 1.45; }
   .familles li::before { content: ""; position: absolute; left: 4px; top: 17px; width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
   .familles b { font-weight: 600; color: var(--navy); letter-spacing: .03em; }
   .annonce { font-family: var(--serif); font-style: italic; font-size: 23px; line-height: 1.45; color: var(--navy); margin-top: 32px; text-align: center; }
@@ -188,8 +188,8 @@
   .etape .jour { font-family: var(--serif); font-size: 14px; letter-spacing: .3em; text-transform: uppercase; color: var(--gold-light); }
   .etape h3 { font-family: var(--serif); font-weight: 600; font-size: 30px; line-height: 1.15; color: var(--ivory); margin-top: 4px; }
   .etape .heure { font-family: var(--serif); font-style: italic; color: var(--gold-light); font-size: 20px; }
-  .etape p { color: #d8d2c4; margin-top: 8px; font-size: 17px; }
-  .etape .lieu { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 15px; letter-spacing: .06em; color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(217,189,127,.4); }
+  .etape p { color: #d8d2c4; margin-top: 8px; font-size: 19px; }
+  .etape .lieu { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 16px; letter-spacing: .06em; color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(217,189,127,.4); }
   .etape .lieu:hover { border-color: var(--gold-light); }
   .etape .lieu svg { width: 14px; height: 14px; }
 
@@ -216,7 +216,7 @@
 
   /* ---------- Family support ---------- */
   .soutien { background: var(--ivory-dark); }
-  .soutien .intro { max-width: 640px; margin: 22px auto 0; text-align: center; font-size: 18px; color: var(--muted); }
+  .soutien .intro { max-width: 640px; margin: 22px auto 0; text-align: center; font-size: 20px; color: var(--muted); }
   .numeros { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 44px; }
   .numero { width: min(340px, 100%); background: var(--ivory); padding: 32px 26px 28px; text-align: center; position: relative; border: 1px solid rgba(184,146,74,.45); }
   .numero::before { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(184,146,74,.2); pointer-events: none; }
@@ -237,7 +237,7 @@
 
   /* ---------- Footer ---------- */
   .merci { text-align: center; padding: 90px 24px 70px; background: var(--ivory-dark); }
-  .merci p { max-width: 680px; margin: 0 auto; font-size: 19px; }
+  .merci p { max-width: 680px; margin: 0 auto; font-size: 21px; }
   .merci b { font-family: var(--serif); color: var(--navy); letter-spacing: .06em; }
   .merci .priere { font-family: var(--serif); font-style: italic; font-size: 25px; color: var(--navy); margin-top: 20px; }
   .merci .signature { font-family: var(--script); font-size: 40px; color: var(--gold); margin-top: 26px; }
@@ -297,7 +297,7 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 860px) {
-    body { font-size: 17px; }
+    body { font-size: 19.5px; }
     .bloc { padding: 80px 20px; }
     .vie, .faire-part { grid-template-columns: 1fr; gap: 40px; }
     .diaporama { max-width: 420px; width: 100%; margin: 0 auto; }
@@ -410,10 +410,10 @@
         <img src="img/portrait.jpg" alt="">
       </div>
       <div class="recit">
-        <p class="apparait" data-anim="droite">Né le 1<sup>er</sup> janvier 1944 à Facobly, au cœur de l'Ouest montagneux de la Côte d'Ivoire, Robert Tiehi a fait de sa vie une œuvre de transmission. <em>Instituteur</em>, il a appris à lire, à écrire et à compter à des générations d'enfants, avec la patience et l'exigence de ceux qui savent que le savoir élève un homme. Combien d'anciens élèves se souviennent encore de sa voix, de sa droiture et de ses encouragements&nbsp;?</p>
-        <p class="apparait" data-anim="droite" style="--i:1">Père de nombreux enfants, grand-père comblé, il était le pilier de la grande famille TIEHI&nbsp;: <em>un patriarche</em> respecté, dont la parole apaisait, rassemblait et guidait. Sa porte était ouverte à tous, et nul ne repartait de chez lui sans un conseil, un sourire ou une bénédiction.</p>
-        <p class="apparait" data-anim="droite" style="--i:2">Mais ceux qui l'ont connu retiendront d'abord <em>sa joie de vivre</em>. Il aimait rire, recevoir, raconter, et savait faire d'un simple moment une fête. Paré de son pagne et de son collier d'or, canne à la main, il portait avec fierté et élégance les traditions de son peuple.</p>
-        <p class="apparait" data-anim="droite" style="--i:3">Le 2 octobre 2026, à Man, il a rejoint la maison du Père. Une légende s'en est allée, mais son héritage demeure&nbsp;: dans ses enfants, dans ses élèves, et dans le cœur de chacun de nous.</p>
+        <p class="apparait" data-anim="droite">Né le 1<sup>er</sup> janvier 1944 à Facobly, dans l'Ouest de la Côte d'Ivoire, Robert Tiehi a consacré sa vie à transmettre. <em>Instituteur</em>, il a appris à lire et à écrire à des générations d'enfants, avec patience et droiture.</p>
+        <p class="apparait" data-anim="droite" style="--i:1">Père de nombreux enfants, il était <em>le patriarche</em> respecté de la grande famille TIEHI&nbsp;: sa parole rassemblait, sa porte était ouverte à tous.</p>
+        <p class="apparait" data-anim="droite" style="--i:2">On retiendra surtout <em>sa joie de vivre</em>&nbsp;: il aimait rire, recevoir, et savait faire d'un simple moment une fête.</p>
+        <p class="apparait" data-anim="droite" style="--i:3">Le 2 octobre 2026, il a rejoint la maison du Père. Une légende s'en est allée, mais son héritage demeure dans nos cœurs.</p>
       </div>
     </div>
   </div>
