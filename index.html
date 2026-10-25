@@ -111,7 +111,7 @@
   .accueil .voile { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, rgba(11,22,48,.2), rgba(11,22,48,.85) 75%); }
   .accueil .contenu { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 90px 20px 110px; }
   .arche {
-    width: min(360px, 74vw); aspect-ratio: 360 / 410; border-radius: 999px 999px 6px 6px; overflow: hidden;
+    position: absolute; left: 16%; right: 16%; top: 7%; bottom: 9%; border-radius: 999px 999px 6px 6px; overflow: hidden;
     border: 2px solid var(--gold-light); box-shadow: 0 0 0 7px rgba(11,22,48,.6), 0 0 0 8px var(--gold), 0 30px 80px rgba(0,0,0,.5);
     background: #e5e1da;
   }
@@ -268,8 +268,8 @@
   @keyframes plane { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-12px) rotate(-3deg); } }
   @keyframes plane-d { 0%, 100% { transform: scaleX(-1) translateY(0) rotate(0); } 50% { transform: scaleX(-1) translateY(-12px) rotate(-3deg); } }
 
-  .arche-zone { position: relative; }
-  .cadre-floral { width: 152%; left: -26%; bottom: -14%; z-index: 2; }
+  .arche-zone { position: relative; width: min(430px, 84vw, 62svh); aspect-ratio: 853 / 1144; }
+  .cadre-floral { inset: 0; width: 100%; height: 100%; z-index: 2; filter: drop-shadow(0 6px 18px rgba(0,0,0,.35)); }
   .colombe-passe { width: clamp(70px, 9vw, 110px); top: 14%; left: 0; z-index: 1; opacity: 0; }
   .demarre .colombe-passe { animation: traverse 26s 4s linear infinite; }
   @keyframes traverse {
@@ -287,6 +287,7 @@
   @keyframes balance-d { from { transform: scaleX(-1) rotate(-2deg); } to { transform: scaleX(-1) rotate(3deg); } }
 
   .coin { width: clamp(70px, 11vw, 130px); }
+  .citation .coin { width: clamp(56px, 7vw, 92px); }
   .coin.hg { top: 10px; left: 10px; }
   .coin.hd { top: 10px; right: 10px; transform: scaleX(-1); }
   .coin.bg { bottom: 10px; left: 10px; transform: scaleY(-1); }
