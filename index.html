@@ -1,0 +1,687 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>En mémoire de Papa Robert TIEHI · 1944 – 2026</title>
+<meta name="description" content="Hommage à Papa Robert TIEHI, instituteur et patriarche de Facobly (1er janvier 1944 – 2 octobre 2026). Programme des obsèques et souvenirs.">
+<meta property="og:title" content="En mémoire de Papa Robert TIEHI">
+<meta property="og:description" content="1er janvier 1944 – 2 octobre 2026 · Une légende s'en est allée. Programme des obsèques : 18, 19 et 20 décembre 2026 à Man et Facobly.">
+<meta property="og:image" content="https://blyzao.github.io/papa-robert-tiehi/img/apercu.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://blyzao.github.io/papa-robert-tiehi/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b1630">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #13233f;
+    --navy-deep: #0b1630;
+    --navy-soft: #1d3157;
+    --gold: #b8924a;
+    --gold-light: #d9bd7f;
+    --ivory: #fbf7ee;
+    --ivory-dark: #f1eadb;
+    --ink: #1d2433;
+    --muted: #5b6375;
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --text: "EB Garamond", Georgia, serif;
+    --script: "Great Vibes", cursive;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--text); color: var(--ink); background: var(--ivory); font-size: 18px; line-height: 1.6; overflow-x: hidden; }
+  body.ferme { overflow: hidden; }
+  img { display: block; max-width: 100%; }
+  section { position: relative; }
+
+  /* ---------- Shared ornaments ---------- */
+  .ornement { display: block; width: 180px; height: 18px; margin: 14px auto; color: var(--gold); }
+  .surtitre { font-family: var(--serif); font-size: 14px; letter-spacing: .34em; text-transform: uppercase; color: var(--gold); text-align: center; }
+  .titre { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 5vw, 44px); letter-spacing: .06em; text-align: center; color: var(--navy); line-height: 1.15; }
+  .bloc { max-width: 1080px; margin: 0 auto; padding: 110px 24px; }
+  .sombre { background: radial-gradient(ellipse at 50% 30%, var(--navy-soft) 0%, var(--navy) 50%, var(--navy-deep) 100%); color: var(--ivory); }
+  .sombre .titre { color: var(--ivory); }
+  .sombre .surtitre, .sombre .ornement { color: var(--gold-light); }
+
+  /* ---------- Scroll reveal ---------- */
+  .apparait { opacity: 0; transition: opacity 1.2s ease, transform 1.2s cubic-bezier(.2,.7,.2,1), filter 1.2s ease; transition-delay: calc(var(--i, 0) * 140ms); }
+  .apparait[data-anim="haut"] { transform: translateY(36px); }
+  .apparait[data-anim="zoom"] { transform: scale(.9); filter: blur(6px); }
+  .apparait[data-anim="gauche"] { transform: translateX(-50px); }
+  .apparait[data-anim="droite"] { transform: translateX(50px); }
+  .apparait.vu { opacity: 1; transform: none; filter: none; }
+
+  /* ---------- Opening overlay ---------- */
+  .ouverture {
+    position: fixed; inset: 0; z-index: 50;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+    padding: 24px;
+    background: radial-gradient(ellipse at 50% 40%, var(--navy-soft) 0%, var(--navy) 45%, var(--navy-deep) 100%);
+    color: var(--ivory);
+    transition: opacity 1.4s ease, transform 1.4s ease, visibility 1.4s;
+  }
+  .ouverture.partie { opacity: 0; transform: scale(1.08); visibility: hidden; }
+  .ouverture .cadre { position: absolute; inset: 18px; border: 1px solid rgba(217,189,127,.55); pointer-events: none; }
+  .ouverture .cadre::after { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(217,189,127,.25); }
+
+  .bougie { position: relative; width: 26px; height: 120px; margin-bottom: 26px; }
+  .bougie .cire { position: absolute; bottom: 0; left: 0; width: 26px; height: 74px; border-radius: 3px 3px 4px 4px; background: linear-gradient(90deg, #e8e1d1, #fbf7ee 40%, #d8cfbb); }
+  .bougie .meche { position: absolute; bottom: 74px; left: 12px; width: 2px; height: 8px; background: #3a2c1c; }
+  .bougie .flamme {
+    position: absolute; bottom: 80px; left: 5px; width: 16px; height: 34px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    background: radial-gradient(ellipse at 50% 75%, #fff 0%, #ffe9a8 30%, #f5b94a 60%, rgba(245,140,40,0) 75%);
+    transform-origin: 50% 90%; animation: vacille 2.4s ease-in-out infinite;
+    filter: blur(.4px);
+  }
+  .bougie .halo { position: absolute; bottom: 60px; left: -47px; width: 120px; height: 120px; border-radius: 50%; background: radial-gradient(circle, rgba(255,214,130,.35), rgba(255,214,130,0) 65%); animation: respire 3.2s ease-in-out infinite; }
+  @keyframes vacille {
+    0%, 100% { transform: scale(1, 1) rotate(-1deg); }
+    25% { transform: scale(.94, 1.06) rotate(2deg); }
+    50% { transform: scale(1.04, .96) rotate(-2deg); }
+    75% { transform: scale(.97, 1.04) rotate(1deg); }
+  }
+  @keyframes respire { 0%, 100% { opacity: .75; transform: scale(1); } 50% { opacity: 1; transform: scale(1.12); } }
+
+  .ouverture .surtitre { color: var(--gold-light); }
+  .ouverture .papa { font-family: var(--script); font-size: clamp(44px, 9vw, 64px); color: var(--gold-light); line-height: 1; margin-top: 18px; }
+  .ouverture .nom { font-family: var(--serif); font-weight: 600; font-size: clamp(32px, 7.5vw, 58px); letter-spacing: .1em; text-transform: uppercase; line-height: 1.1; }
+  .lettre { display: inline-block; opacity: 0; transform: translateY(18px); animation: lettre .9s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: calc(400ms + var(--l) * 70ms); }
+  @keyframes lettre { to { opacity: 1; transform: none; } }
+  .ouverture .dates { font-family: var(--serif); font-size: 19px; letter-spacing: .12em; color: #e9e3d6; margin-top: 12px; opacity: 0; animation: lettre 1s 1.6s forwards; }
+  .entrer {
+    margin-top: 40px; font-family: var(--serif); font-size: 15px; letter-spacing: .3em; text-transform: uppercase;
+    color: var(--navy); background: var(--gold-light); border: none; padding: 15px 34px; cursor: pointer;
+    opacity: 0; animation: lettre 1s 2.1s forwards, pulse 2.6s 3.2s ease-in-out infinite;
+    box-shadow: 0 0 0 1px var(--gold-light), 0 0 0 5px rgba(217,189,127,.18);
+  }
+  .entrer:hover { background: #e7cf98; }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 1px var(--gold-light), 0 0 0 5px rgba(217,189,127,.18); } 50% { box-shadow: 0 0 0 1px var(--gold-light), 0 0 0 14px rgba(217,189,127,0); } }
+
+  /* ---------- Floating lights (canvas) ---------- */
+  #lumieres { position: fixed; inset: 0; pointer-events: none; z-index: 40; mix-blend-mode: screen; }
+
+  /* ---------- Hero ---------- */
+  .accueil { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; justify-content: center; overflow: hidden; color: var(--ivory); background: var(--navy-deep); }
+  .accueil .fond { position: absolute; inset: -40px; background: url(img/portrait.jpg) center 30% / cover; filter: blur(28px) brightness(.45) saturate(.9); transform: scale(1.1); }
+  .accueil .voile { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, rgba(11,22,48,.2), rgba(11,22,48,.85) 75%); }
+  .accueil .contenu { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 90px 20px 110px; }
+  .arche {
+    width: min(360px, 74vw); aspect-ratio: 360 / 410; border-radius: 999px 999px 6px 6px; overflow: hidden;
+    border: 2px solid var(--gold-light); box-shadow: 0 0 0 7px rgba(11,22,48,.6), 0 0 0 8px var(--gold), 0 30px 80px rgba(0,0,0,.5);
+    background: #e5e1da;
+  }
+  .arche img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; animation: zoom 18s ease-out forwards; transform: scale(1.14); }
+  .demarre .arche img { animation-play-state: running; }
+  @keyframes zoom { to { transform: scale(1); } }
+  .accueil .slogan { font-family: var(--serif); font-style: italic; font-size: clamp(20px, 3.2vw, 26px); color: var(--gold-light); margin-top: 34px; }
+  .accueil .papa { font-family: var(--script); font-size: clamp(40px, 7vw, 56px); color: var(--gold-light); line-height: 1; margin-top: 10px; }
+  .accueil .nom { font-family: var(--serif); font-weight: 600; font-size: clamp(34px, 6.5vw, 56px); letter-spacing: .1em; text-transform: uppercase; line-height: 1.05; }
+  .accueil .dates { font-family: var(--serif); font-size: clamp(16px, 2.4vw, 20px); letter-spacing: .1em; margin-top: 10px; color: #e9e3d6; }
+  .accueil .dates span { color: var(--gold-light); padding: 0 12px; }
+  .monte { opacity: 0; transform: translateY(26px); }
+  .demarre .monte { animation: lettre 1.2s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: calc(var(--i) * 350ms + 300ms); }
+  .defile { position: absolute; bottom: 28px; left: 50%; width: 1px; height: 56px; background: rgba(217,189,127,.3); overflow: hidden; }
+  .defile::after { content: ""; position: absolute; left: 0; top: -50%; width: 1px; height: 50%; background: var(--gold-light); animation: defile 2.2s ease-in-out infinite; }
+  @keyframes defile { to { top: 100%; } }
+
+  /* ---------- Biography ---------- */
+  .vie { display: grid; grid-template-columns: 1fr 1.25fr; gap: 64px; align-items: center; margin-top: 54px; }
+  .diaporama { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 4px; background: var(--navy); box-shadow: 0 24px 60px rgba(19,35,63,.25); }
+  .diaporama::after { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(217,189,127,.7); pointer-events: none; }
+  .diaporama img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; opacity: 0; transition: opacity 2s ease; }
+  .diaporama img.actif { opacity: 1; animation: kenburns 9s ease-out forwards; }
+  .diaporama img:nth-child(even).actif { animation-name: kenburns2; }
+  @keyframes kenburns { from { transform: scale(1.18) translate(2%, 2%); } to { transform: scale(1.02) translate(0, 0); } }
+  @keyframes kenburns2 { from { transform: scale(1.02) translate(-1%, 0); } to { transform: scale(1.18) translate(1%, -2%); } }
+  .recit p { margin-bottom: 18px; text-align: justify; hyphens: auto; }
+  .recit p:first-child::first-letter { font-family: var(--serif); font-weight: 600; float: left; font-size: 74px; line-height: .8; padding: 8px 10px 0 0; color: var(--gold); }
+  .recit em { color: var(--navy); }
+
+  /* ---------- Three pillars ---------- */
+  .piliers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
+  .pilier { text-align: center; padding: 40px 26px 36px; border: 1px solid rgba(217,189,127,.35); position: relative; background: rgba(255,255,255,.02); }
+  .pilier::before { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(217,189,127,.15); pointer-events: none; }
+  .pilier svg { width: 54px; height: 54px; color: var(--gold-light); margin: 0 auto 18px; display: block; }
+  .pilier h3 { font-family: var(--serif); font-weight: 600; font-size: 25px; letter-spacing: .06em; color: var(--ivory); }
+  .pilier p { font-size: 17px; color: #d8d2c4; margin-top: 10px; line-height: 1.55; }
+
+  /* ---------- Quote band ---------- */
+  .citation { text-align: center; padding: 96px 24px; background: var(--ivory-dark); }
+  .citation p { font-family: var(--serif); font-style: italic; font-size: clamp(26px, 4.4vw, 40px); line-height: 1.3; color: var(--navy); max-width: 820px; margin: 0 auto; }
+  .citation .guil { font-family: var(--script); color: var(--gold); font-size: 1.6em; line-height: 0; position: relative; top: .25em; }
+
+  /* ---------- Faire-part ---------- */
+  .faire-part { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: start; margin-top: 54px; }
+  .medaillon { position: sticky; top: 40px; text-align: center; }
+  .medaillon .rond { width: 240px; height: 240px; border-radius: 50%; overflow: hidden; margin: 0 auto; border: 2px solid var(--gold); box-shadow: 0 0 0 8px var(--ivory), 0 0 0 9px rgba(184,146,74,.5); }
+  .medaillon .rond img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; }
+  .medaillon p { font-family: var(--serif); font-style: italic; color: var(--muted); margin-top: 22px; font-size: 19px; }
+  .familles { list-style: none; }
+  .familles li { position: relative; padding: 9px 0 9px 26px; border-bottom: 1px solid rgba(184,146,74,.18); font-size: 17px; line-height: 1.45; }
+  .familles li::before { content: ""; position: absolute; left: 4px; top: 17px; width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
+  .familles b { font-weight: 600; color: var(--navy); letter-spacing: .03em; }
+  .annonce { font-family: var(--serif); font-style: italic; font-size: 23px; line-height: 1.45; color: var(--navy); margin-top: 32px; text-align: center; }
+  .annonce strong { font-style: normal; letter-spacing: .08em; }
+
+  /* ---------- Programme ---------- */
+  .compte { display: flex; justify-content: center; gap: 14px; margin-top: 30px; }
+  .compte div { min-width: 86px; padding: 14px 10px; border: 1px solid rgba(217,189,127,.45); text-align: center; }
+  .compte b { display: block; font-family: var(--serif); font-weight: 600; font-size: 38px; line-height: 1; color: var(--gold-light); }
+  .compte span { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: #cfc8b8; }
+  .compte-texte { text-align: center; font-family: var(--serif); font-style: italic; font-size: 19px; color: #d8d2c4; margin-top: 12px; }
+  .frise { position: relative; max-width: 760px; margin: 64px auto 0; }
+  .frise::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: linear-gradient(var(--gold-light), rgba(217,189,127,.15)); }
+  .etape { position: relative; width: 50%; padding: 0 46px 56px; }
+  .etape:nth-child(odd) { text-align: right; }
+  .etape:nth-child(even) { margin-left: 50%; }
+  .etape::before { content: ""; position: absolute; top: 8px; width: 16px; height: 16px; border: 1px solid var(--gold-light); background: var(--navy); transform: rotate(45deg); }
+  .etape:nth-child(odd)::before { right: -9px; }
+  .etape:nth-child(even)::before { left: -8px; }
+  .etape::after { content: ""; position: absolute; top: 13px; width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg); }
+  .etape:nth-child(odd)::after { right: -4px; }
+  .etape:nth-child(even)::after { left: -3px; }
+  .etape .jour { font-family: var(--serif); font-size: 14px; letter-spacing: .3em; text-transform: uppercase; color: var(--gold-light); }
+  .etape h3 { font-family: var(--serif); font-weight: 600; font-size: 30px; line-height: 1.15; color: var(--ivory); margin-top: 4px; }
+  .etape .heure { font-family: var(--serif); font-style: italic; color: var(--gold-light); font-size: 20px; }
+  .etape p { color: #d8d2c4; margin-top: 8px; font-size: 17px; }
+  .etape .lieu { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 15px; letter-spacing: .06em; color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(217,189,127,.4); }
+  .etape .lieu:hover { border-color: var(--gold-light); }
+  .etape .lieu svg { width: 14px; height: 14px; }
+
+  /* ---------- Gallery: 3D carousel ---------- */
+  .galerie { overflow: hidden; }
+  .scene { position: relative; height: 520px; margin-top: 50px; perspective: 1400px; touch-action: pan-y; user-select: none; }
+  .carte { position: absolute; left: 50%; top: 50%; width: 320px; height: 430px; margin: -215px 0 0 -160px; transition: transform .9s cubic-bezier(.2,.7,.2,1), opacity .9s, filter .9s; cursor: pointer; }
+  .carte img { width: 100%; height: 100%; object-fit: cover; border: 6px solid #fff; box-shadow: 0 24px 50px rgba(19,35,63,.3); pointer-events: none; }
+  .commandes { display: flex; align-items: center; justify-content: center; gap: 22px; margin-top: 18px; }
+  .commandes button { width: 50px; height: 50px; border-radius: 50%; border: 1px solid var(--gold); background: transparent; color: var(--navy); cursor: pointer; display: grid; place-items: center; transition: background .3s, color .3s; }
+  .commandes button:hover { background: var(--navy); color: var(--gold-light); }
+  .commandes svg { width: 20px; height: 20px; }
+  .compteur { font-family: var(--serif); font-size: 19px; letter-spacing: .14em; color: var(--muted); min-width: 70px; text-align: center; }
+
+  .visionneuse { position: fixed; inset: 0; z-index: 60; background: rgba(8,14,30,.94); display: none; align-items: center; justify-content: center; padding: 20px; }
+  .visionneuse.ouverte { display: flex; animation: fondu .35s ease; }
+  @keyframes fondu { from { opacity: 0; } }
+  .visionneuse img { max-width: 92vw; max-height: 86vh; object-fit: contain; border: 4px solid #fff; }
+  .visionneuse button { position: absolute; background: none; border: none; color: var(--gold-light); cursor: pointer; padding: 14px; }
+  .visionneuse button svg { width: 34px; height: 34px; }
+  .visionneuse .fermer { top: 10px; right: 10px; }
+  .visionneuse .prec { left: 6px; top: 50%; transform: translateY(-50%); }
+  .visionneuse .suiv { right: 6px; top: 50%; transform: translateY(-50%); }
+
+  /* ---------- Verse ---------- */
+  .verset { text-align: center; }
+  .verset .croix { width: 46px; height: 70px; color: var(--gold-light); margin: 0 auto 30px; display: block; }
+  .verset blockquote { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(28px, 4.6vw, 44px); line-height: 1.3; max-width: 860px; margin: 0 auto; }
+  .verset .ref { font-family: var(--serif); font-size: 15px; letter-spacing: .34em; text-transform: uppercase; color: var(--gold-light); margin-top: 26px; }
+
+  /* ---------- Footer ---------- */
+  .merci { text-align: center; padding: 90px 24px 70px; background: var(--ivory-dark); }
+  .merci p { max-width: 680px; margin: 0 auto; font-size: 19px; }
+  .merci b { font-family: var(--serif); color: var(--navy); letter-spacing: .06em; }
+  .merci .priere { font-family: var(--serif); font-style: italic; font-size: 25px; color: var(--navy); margin-top: 20px; }
+  .merci .signature { font-family: var(--script); font-size: 40px; color: var(--gold); margin-top: 26px; }
+  .merci small { display: block; margin-top: 40px; font-size: 14px; color: var(--muted); letter-spacing: .08em; }
+
+  /* ---------- Floating buttons ---------- */
+  .flottants { position: fixed; right: 18px; bottom: 18px; z-index: 30; display: flex; flex-direction: column; gap: 10px; }
+  .flottants button { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--gold-light); background: rgba(11,22,48,.85); color: var(--gold-light); cursor: pointer; display: none; place-items: center; backdrop-filter: blur(6px); }
+  .flottants button.visible { display: grid; }
+  .flottants svg { width: 20px; height: 20px; }
+  .flottants .joue svg { animation: tourne 6s linear infinite; }
+  @keyframes tourne { to { transform: rotate(360deg); } }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px) {
+    body { font-size: 17px; }
+    .bloc { padding: 80px 20px; }
+    .vie, .faire-part { grid-template-columns: 1fr; gap: 40px; }
+    .diaporama { max-width: 420px; width: 100%; margin: 0 auto; }
+    .piliers { grid-template-columns: 1fr; }
+    .medaillon { position: static; }
+    .medaillon .rond { width: 190px; height: 190px; }
+    .frise::before { left: 8px; }
+    .etape, .etape:nth-child(even) { width: 100%; margin-left: 0; padding: 0 0 46px 40px; text-align: left !important; }
+    .etape:nth-child(odd)::before, .etape:nth-child(even)::before { left: 0; right: auto; }
+    .etape:nth-child(odd)::after, .etape:nth-child(even)::after { left: 5px; right: auto; }
+    .scene { height: 420px; }
+    .carte { width: 240px; height: 330px; margin: -165px 0 0 -120px; }
+    .compte div { min-width: 68px; }
+    .compte b { font-size: 30px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  }
+</style>
+</head>
+<body class="ferme">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-ornement" viewBox="0 0 200 20">
+      <path d="M0 10 H78 M122 10 H200" stroke="currentColor" stroke-width="1"/>
+      <path d="M100 2 L108 10 L100 18 L92 10 Z" fill="currentColor"/>
+      <path d="M84 10 C88 4, 92 4, 92 10 C92 16, 88 16, 84 10 Z M116 10 C112 4, 108 4, 108 10 C108 16, 112 16, 116 10 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+      <circle cx="80" cy="10" r="1.6" fill="currentColor"/><circle cx="120" cy="10" r="1.6" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-croix" viewBox="0 0 60 90">
+      <path d="M26 2 H34 V24 H56 V32 H34 V88 H26 V32 H4 V24 H26 Z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M30 8 V82 M10 28 H50" stroke="currentColor" stroke-width=".6"/>
+    </symbol>
+    <symbol id="i-livre" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+      <path d="M24 12 C18 8, 10 8, 5 10 V38 C10 36, 18 36, 24 40 C30 36, 38 36, 43 38 V10 C38 8, 30 8, 24 12 Z"/><path d="M24 12 V40"/>
+      <path d="M10 16 C13 15, 17 15, 20 16.5 M10 22 C13 21, 17 21, 20 22.5 M28 16.5 C31 15, 35 15, 38 16 M28 22.5 C31 21, 35 21, 38 22"/>
+    </symbol>
+    <symbol id="i-arbre" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <path d="M24 44 V22 M24 30 L16 22 M24 26 L32 18 M18 44 H30"/>
+      <path d="M24 4 C14 4, 8 11, 9 18 C4 21, 5 29, 12 30 C14 34, 20 35, 24 32 C28 35, 34 34, 36 30 C43 29, 44 21, 39 18 C40 11, 34 4, 24 4 Z"/>
+    </symbol>
+    <symbol id="i-soleil" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <circle cx="24" cy="24" r="9"/>
+      <path d="M24 4 V9 M24 39 V44 M4 24 H9 M39 24 H44 M9.9 9.9 L13.4 13.4 M34.6 34.6 L38.1 38.1 M9.9 38.1 L13.4 34.6 M34.6 13.4 L38.1 9.9"/>
+      <path d="M20 26 C21.5 28, 26.5 28, 28 26" />
+    </symbol>
+    <symbol id="i-lieu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22 C12 22 19 15 19 9.5 A7 7 0 0 0 5 9.5 C5 15 12 22 12 22 Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-gauche" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 4 L7 12 L15 20"/></symbol>
+    <symbol id="i-droite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4 L17 12 L9 20"/></symbol>
+    <symbol id="i-fermer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5 L19 19 M19 5 L5 19"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18 V5 L20 3 V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></symbol>
+    <symbol id="i-defile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9 L12 15 L18 9"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="5" width="3.5" height="14"/><rect x="13.5" y="5" width="3.5" height="14"/></symbol>
+  </defs>
+</svg>
+
+<!-- ===== Opening ===== -->
+<div class="ouverture" id="ouverture">
+  <div class="cadre"></div>
+  <div class="bougie" aria-hidden="true"><div class="halo"></div><div class="flamme"></div><div class="meche"></div><div class="cire"></div></div>
+  <div class="surtitre">En mémoire de</div>
+  <div class="papa" data-lettres>Papa</div>
+  <div class="nom" data-lettres>Robert Tiehi</div>
+  <div class="dates">1944 — 2026</div>
+  <button class="entrer" id="entrer">Entrer</button>
+</div>
+
+<canvas id="lumieres" aria-hidden="true"></canvas>
+
+<!-- ===== Hero ===== -->
+<section class="accueil" id="accueil">
+  <div class="fond"></div>
+  <div class="voile"></div>
+  <div class="contenu">
+    <div class="arche monte" style="--i:0"><img src="img/portrait.jpg" alt="Papa Robert TIEHI en tenue traditionnelle"></div>
+    <div class="slogan monte" style="--i:1">Une légende s'en est allée</div>
+    <div class="papa monte" style="--i:2">Papa</div>
+    <h1 class="nom monte" style="--i:2">Robert Tiehi</h1>
+    <div class="dates monte" style="--i:3">1<sup>er</sup> janvier 1944<span>◆</span>2 octobre 2026</div>
+  </div>
+  <div class="defile"></div>
+</section>
+
+<!-- ===== Biography ===== -->
+<section id="vie">
+  <div class="bloc">
+    <div class="surtitre apparait" data-anim="haut">Sa vie</div>
+    <h2 class="titre apparait" data-anim="haut" style="--i:1">Un homme de Facobly</h2>
+    <svg class="ornement apparait" data-anim="zoom" style="--i:2"><use href="#i-ornement"/></svg>
+    <div class="vie">
+      <div class="diaporama apparait" data-anim="gauche" id="diaporama">
+        <img src="img/portrait-beige.jpg" alt="" class="actif">
+        <img src="img/portrait-boubou.jpg" alt="">
+        <img src="img/souvenir-01.jpg" alt="">
+        <img src="img/portrait-raye.jpg" alt="">
+        <img src="img/souvenir-03.jpg" alt="">
+        <img src="img/portrait.jpg" alt="">
+      </div>
+      <div class="recit">
+        <p class="apparait" data-anim="droite">Né le 1<sup>er</sup> janvier 1944 à Facobly, au cœur de l'Ouest montagneux de la Côte d'Ivoire, Robert Tiehi a fait de sa vie une œuvre de transmission. <em>Instituteur</em>, il a appris à lire, à écrire et à compter à des générations d'enfants, avec la patience et l'exigence de ceux qui savent que le savoir élève un homme. Combien d'anciens élèves se souviennent encore de sa voix, de sa droiture et de ses encouragements&nbsp;?</p>
+        <p class="apparait" data-anim="droite" style="--i:1">Père de nombreux enfants, grand-père comblé, il était le pilier de la grande famille TIEHI&nbsp;: <em>un patriarche</em> respecté, dont la parole apaisait, rassemblait et guidait. Sa porte était ouverte à tous, et nul ne repartait de chez lui sans un conseil, un sourire ou une bénédiction.</p>
+        <p class="apparait" data-anim="droite" style="--i:2">Mais ceux qui l'ont connu retiendront d'abord <em>sa joie de vivre</em>. Il aimait rire, recevoir, raconter, et savait faire d'un simple moment une fête. Paré de son pagne et de son collier d'or, canne à la main, il portait avec fierté et élégance les traditions de son peuple.</p>
+        <p class="apparait" data-anim="droite" style="--i:3">Le 2 octobre 2026, à Man, il a rejoint la maison du Père. Une légende s'en est allée, mais son héritage demeure&nbsp;: dans ses enfants, dans ses élèves, et dans le cœur de chacun de nous.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Three pillars ===== -->
+<section class="sombre">
+  <div class="bloc">
+    <div class="surtitre apparait" data-anim="haut">Ce qu'il nous laisse</div>
+    <h2 class="titre apparait" data-anim="haut" style="--i:1">Un héritage</h2>
+    <svg class="ornement apparait" data-anim="zoom" style="--i:2"><use href="#i-ornement"/></svg>
+    <div class="piliers">
+      <div class="pilier apparait" data-anim="haut">
+        <svg><use href="#i-livre"/></svg>
+        <h3>L'instituteur</h3>
+        <p>Des générations d'enfants lui doivent leurs premières lettres et le goût d'apprendre.</p>
+      </div>
+      <div class="pilier apparait" data-anim="haut" style="--i:1">
+        <svg><use href="#i-arbre"/></svg>
+        <h3>Le patriarche</h3>
+        <p>Racine et abri de toute une famille, il savait unir, conseiller et bénir.</p>
+      </div>
+      <div class="pilier apparait" data-anim="haut" style="--i:2">
+        <svg><use href="#i-soleil"/></svg>
+        <h3>La joie de vivre</h3>
+        <p>Son rire, sa générosité et son élégance illuminaient chaque rassemblement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Quote ===== -->
+<section class="citation">
+  <p class="apparait" data-anim="zoom"><span class="guil">“</span>Tu as laissé une empreinte indélébile dans nos cœurs.<span class="guil">”</span></p>
+</section>
+
+<!-- ===== Faire-part ===== -->
+<section id="faire-part">
+  <div class="bloc">
+    <div class="surtitre apparait" data-anim="haut">Faire-part</div>
+    <h2 class="titre apparait" data-anim="haut" style="--i:1">Avis de décès</h2>
+    <svg class="ornement apparait" data-anim="zoom" style="--i:2"><use href="#i-ornement"/></svg>
+    <div class="faire-part">
+      <div class="medaillon apparait" data-anim="gauche">
+        <div class="rond"><img src="img/portrait-boubou.jpg" alt="Robert TIEHI"></div>
+        <p>« Que Dieu accueille son âme dans sa paix éternelle. »</p>
+      </div>
+      <div>
+        <ul class="familles">
+          <li class="apparait" data-anim="haut">La grande famille <b>TIEHI</b>, épouses, enfants, petits-enfants, Facobly, Man, Abidjan, Souakpé et Nidrou</li>
+          <li class="apparait" data-anim="haut"><b>TIE Lambert</b>, épouses, enfants, petits-enfants à Facobly et Abidjan</li>
+          <li class="apparait" data-anim="haut">La grande famille <b>OULAI</b>, épouses, enfants, petits-enfants et arrière-petits-enfants à Facobly et Abidjan</li>
+          <li class="apparait" data-anim="haut">La grande famille <b>TIÉCOURA</b>, enfants, petits-enfants et arrière-petits-enfants à Facobly et Abidjan</li>
+          <li class="apparait" data-anim="haut">La grande famille <b>TOKPAO</b>, enfants, petits-enfants et arrière-petits-enfants à Facobly et Abidjan</li>
+          <li class="apparait" data-anim="haut">La grande famille <b>KOUHON</b>, enfants, petits-enfants et arrière-petits-enfants à Facobly et Abidjan</li>
+          <li class="apparait" data-anim="haut">La grande famille <b>TIÉCOURA</b> à Nidrou</li>
+          <li class="apparait" data-anim="haut">Épouse <b>MIANTÉ</b>, enfants, petits-enfants à Facobly et Abidjan</li>
+          <li class="apparait" data-anim="haut">La grande famille <b>KAU</b> à Souakpé Douedi</li>
+          <li class="apparait" data-anim="haut">Monsieur <b>OULAI SIAO AUTIS</b>, épouse, enfants et petit-enfant à Abidjan</li>
+          <li class="apparait" data-anim="haut">La grande famille <b>SY</b>, enfants et petits-enfants à Man, Abidjan et Korhogo</li>
+          <li class="apparait" data-anim="haut">Monsieur <b>OULAI Alain</b>, épouse et enfants aux USA</li>
+          <li class="apparait" data-anim="haut">Monsieur <b>DIGBÉ</b>, épouse et enfants à Divo</li>
+          <li class="apparait" data-anim="haut">Monsieur <b>TIA SAHI LAZARD</b>, épouse et enfants à Séguéla</li>
+          <li class="apparait" data-anim="haut">La famille <b>TIEFTY</b> et enfants à Facobly</li>
+          <li class="apparait" data-anim="haut">Monsieur <b>KEI BERNARD</b>, à la retraite, épouse et enfants à Man</li>
+          <li class="apparait" data-anim="haut">Monsieur <b>COULIBALY KIGNINLMAN SEYDOU</b>, épouse et enfants à Man</li>
+          <li class="apparait" data-anim="haut">Les familles <b>SALÉ</b> et <b>DAGO</b>, épouses, enfants, petits-enfants à Yobéri, Abidjan et aux USA</li>
+        </ul>
+        <p class="annonce apparait" data-anim="haut">ont la profonde douleur de vous annoncer le décès de leur époux, père, frère, grand-père et beau-père <strong>ROBERT TIEHI</strong>, survenu le 2 octobre 2026 au CHR de Man.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Programme ===== -->
+<section class="sombre" id="programme">
+  <div class="bloc">
+    <div class="surtitre apparait" data-anim="haut">Man &amp; Facobly</div>
+    <h2 class="titre apparait" data-anim="haut" style="--i:1">Programme des obsèques</h2>
+    <svg class="ornement apparait" data-anim="zoom" style="--i:2"><use href="#i-ornement"/></svg>
+    <div id="compte-bloc" class="apparait" data-anim="haut" style="--i:3">
+      <div class="compte">
+        <div><b id="c-j">–</b><span>jours</span></div>
+        <div><b id="c-h">–</b><span>heures</span></div>
+        <div><b id="c-m">–</b><span>min</span></div>
+      </div>
+      <p class="compte-texte">avant la levée du corps</p>
+    </div>
+    <div class="frise">
+      <div class="etape apparait" data-anim="gauche">
+        <div class="jour">Vendredi</div>
+        <h3>18 décembre 2026</h3>
+        <div class="heure">13 h 45</div>
+        <p>Levée du corps à l'IVOSEP de Man, suivie de la veillée religieuse et traditionnelle à la place publique de Facobly, de 20 h à l'aube.</p>
+        <a class="lieu" href="https://www.google.com/maps/search/?api=1&query=IVOSEP+Man+C%C3%B4te+d%27Ivoire" target="_blank" rel="noopener"><svg><use href="#i-lieu"/></svg>IVOSEP, Man</a>
+      </div>
+      <div class="etape apparait" data-anim="droite">
+        <div class="jour">Samedi</div>
+        <h3>19 décembre 2026</h3>
+        <p>Messe de requiem, passage du corps au domicile familial, suivis de l'inhumation au cimetière de Facobly.</p>
+        <a class="lieu" href="https://www.google.com/maps/search/?api=1&query=Facobly+C%C3%B4te+d%27Ivoire" target="_blank" rel="noopener"><svg><use href="#i-lieu"/></svg>Facobly</a>
+      </div>
+      <div class="etape apparait" data-anim="gauche">
+        <div class="jour">Dimanche</div>
+        <h3>20 décembre 2026</h3>
+        <p>Cérémonie traditionnelle des obsèques.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Gallery ===== -->
+<section class="galerie" id="galerie">
+  <div class="bloc">
+    <div class="surtitre apparait" data-anim="haut">Souvenirs</div>
+    <h2 class="titre apparait" data-anim="haut" style="--i:1">Entouré des siens</h2>
+    <svg class="ornement apparait" data-anim="zoom" style="--i:2"><use href="#i-ornement"/></svg>
+    <div class="scene apparait" data-anim="zoom" id="scene"></div>
+    <div class="commandes">
+      <button id="g-prec" aria-label="Photo précédente"><svg><use href="#i-gauche"/></svg></button>
+      <div class="compteur" id="g-compteur">1 / 1</div>
+      <button id="g-suiv" aria-label="Photo suivante"><svg><use href="#i-droite"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<div class="visionneuse" id="visionneuse" role="dialog" aria-label="Photo agrandie">
+  <img id="v-img" alt="">
+  <button class="fermer" aria-label="Fermer"><svg><use href="#i-fermer"/></svg></button>
+  <button class="prec" aria-label="Précédente"><svg><use href="#i-gauche"/></svg></button>
+  <button class="suiv" aria-label="Suivante"><svg><use href="#i-droite"/></svg></button>
+</div>
+
+<!-- ===== Verse ===== -->
+<section class="sombre verset">
+  <div class="bloc">
+    <svg class="croix apparait" data-anim="zoom"><use href="#i-croix"/></svg>
+    <blockquote class="apparait" data-anim="haut" style="--i:1">« J'ai combattu le bon combat, j'ai achevé la course, j'ai gardé la foi. »</blockquote>
+    <div class="ref apparait" data-anim="haut" style="--i:2">2 Timothée 4 : 7</div>
+  </div>
+</section>
+
+<!-- ===== Thanks ===== -->
+<footer class="merci">
+  <p class="apparait" data-anim="haut">La grande famille <b>TIEHI</b> vous remercie pour votre présence, vos prières, votre soutien et votre compassion en cette douloureuse circonstance.</p>
+  <p class="priere apparait" data-anim="haut" style="--i:1">Que Dieu accueille son âme dans sa paix éternelle.</p>
+  <div class="signature apparait" data-anim="zoom" style="--i:2">Repose en paix, Papa</div>
+  <small>Robert TIEHI · 1944 – 2026</small>
+</footer>
+
+<div class="flottants">
+  <button id="b-musique" aria-label="Musique"><svg><use href="#i-note"/></svg></button>
+  <button id="b-defile" aria-label="Défilement automatique"><svg><use href="#i-pause"/></svg></button>
+</div>
+
+<audio id="musique" src="musique/musique.mp3" loop preload="none"></audio>
+
+<script>
+const REGLAGES = {
+  leveeDuCorps: '2026-12-18T13:45:00Z',      // Côte d'Ivoire = UTC+0
+  galerie: [
+    'img/portrait-beige.jpg', 'img/souvenir-01.jpg', 'img/souvenir-05.jpg', 'img/souvenir-03.jpg',
+    'img/souvenir-02.jpg', 'img/souvenir-04.jpg', 'img/portrait-raye.jpg', 'img/souvenir-06.jpg',
+    'img/souvenir-07.jpg', 'img/souvenir-16.jpg', 'img/souvenir-12.jpg', 'img/souvenir-18.jpg',
+    'img/portrait-boubou.jpg',
+  ],
+  vitesseDefilement: [34, 46],               // px/s: small screens, large screens
+};
+
+/* ---------- Letter-by-letter names ---------- */
+let l = 0;
+document.querySelectorAll('[data-lettres]').forEach(el => {
+  el.innerHTML = [...el.textContent].map(c => c === ' ' ? ' ' : `<span class="lettre" style="--l:${l++}">${c}</span>`).join('');
+});
+
+/* ---------- Scroll reveal ---------- */
+const observateur = new IntersectionObserver(entrees => entrees.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('vu'); observateur.unobserve(e.target); }
+}), { threshold: 0.12 });
+document.querySelectorAll('.apparait').forEach(el => observateur.observe(el));
+
+/* ---------- Opening ---------- */
+const musique = document.getElementById('musique');
+const bMusique = document.getElementById('b-musique');
+const bDefile = document.getElementById('b-defile');
+document.getElementById('entrer').addEventListener('click', () => {
+  document.getElementById('ouverture').classList.add('partie');
+  document.body.classList.remove('ferme');
+  document.getElementById('accueil').classList.add('demarre');
+  lancerLumieres();
+  musique.play().then(() => { bMusique.classList.add('visible', 'joue'); }).catch(() => {});
+  setTimeout(() => { bDefile.classList.add('visible'); demarrerDefilement(); }, 3500);
+});
+bMusique.addEventListener('click', () => {
+  if (musique.paused) { musique.play(); bMusique.classList.add('joue'); }
+  else { musique.pause(); bMusique.classList.remove('joue'); }
+});
+
+// ?apercu → everything shown at once (screenshots, link preview image)
+if (new URLSearchParams(location.search).has('apercu')) {
+  document.getElementById('ouverture').remove();
+  document.body.classList.remove('ferme');
+  document.getElementById('accueil').classList.add('demarre');
+  document.querySelectorAll('.apparait').forEach(el => { el.style.transition = 'none'; el.classList.add('vu'); });
+}
+
+/* ---------- Floating golden lights ---------- */
+function lancerLumieres() {
+  const c = document.getElementById('lumieres'), ctx = c.getContext('2d');
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let w, h; const dpr = Math.min(devicePixelRatio || 1, 2);
+  const taille = () => { w = c.width = innerWidth * dpr; h = c.height = innerHeight * dpr; };
+  taille(); addEventListener('resize', taille);
+  const n = innerWidth < 700 ? 18 : 32;
+  const p = Array.from({ length: n }, () => nouvelle(true));
+  function nouvelle(partout) {
+    return { x: Math.random() * w, y: partout ? Math.random() * h : h + 20, r: (Math.random() * 2.2 + .8) * dpr,
+             v: (Math.random() * .25 + .12) * dpr, o: Math.random() * Math.PI * 2, a: Math.random() * .35 + .15 };
+  }
+  (function frame(t) {
+    ctx.clearRect(0, 0, w, h);
+    p.forEach((q, i) => {
+      q.y -= q.v; q.x += Math.sin(t / 2400 + q.o) * .25 * dpr;
+      if (q.y < -20) p[i] = nouvelle(false);
+      const g = ctx.createRadialGradient(q.x, q.y, 0, q.x, q.y, q.r * 4);
+      const a = q.a * (.6 + .4 * Math.sin(t / 900 + q.o));
+      g.addColorStop(0, `rgba(255,224,150,${a})`); g.addColorStop(1, 'rgba(255,224,150,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(q.x, q.y, q.r * 4, 0, Math.PI * 2); ctx.fill();
+    });
+    requestAnimationFrame(frame);
+  })(0);
+}
+
+/* ---------- Auto-scroll ---------- */
+let defileActif = false, defileVoulu = true, reprise, dernier, reste = 0;
+function demarrerDefilement() { if (!defileVoulu) return; defileActif = true; dernier = performance.now(); requestAnimationFrame(pas); majBouton(); }
+function pas(t) {
+  if (!defileActif) return;
+  const v = REGLAGES.vitesseDefilement[innerWidth < 700 ? 0 : 1];
+  reste += v * (t - dernier) / 1000; dernier = t;
+  const d = Math.floor(reste); reste -= d;
+  if (d) scrollBy(0, d);
+  if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) { defileActif = false; majBouton(); return; }
+  requestAnimationFrame(pas);
+}
+function interrompre() {
+  if (!defileActif) return;
+  defileActif = false; majBouton();
+  clearTimeout(reprise); reprise = setTimeout(demarrerDefilement, 8000);
+}
+['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(ev => addEventListener(ev, e => { if (!bDefile.contains(e.target)) interrompre(); }, { passive: true }));
+bDefile.addEventListener('click', () => {
+  if (defileActif) { defileVoulu = false; defileActif = false; clearTimeout(reprise); }
+  else { defileVoulu = true; demarrerDefilement(); }
+  majBouton();
+});
+function majBouton() {
+  bDefile.querySelector('use').setAttribute('href', defileActif ? '#i-pause' : '#i-defile');
+  bDefile.setAttribute('aria-label', defileActif ? 'Arrêter le défilement' : 'Reprendre le défilement');
+}
+
+/* ---------- Biography slideshow (Ken Burns crossfade) ---------- */
+(() => {
+  const imgs = [...document.querySelectorAll('#diaporama img')]; let i = 0;
+  setInterval(() => {
+    imgs[i].classList.remove('actif'); i = (i + 1) % imgs.length;
+    void imgs[i].offsetWidth; imgs[i].classList.add('actif');
+  }, 6000);
+})();
+
+/* ---------- Countdown ---------- */
+(() => {
+  const cible = new Date(REGLAGES.leveeDuCorps).getTime();
+  const bloc = document.getElementById('compte-bloc');
+  function maj() {
+    const d = cible - Date.now();
+    if (d <= 0) { bloc.style.display = 'none'; return; }
+    document.getElementById('c-j').textContent = Math.floor(d / 864e5);
+    document.getElementById('c-h').textContent = Math.floor(d / 36e5) % 24;
+    document.getElementById('c-m').textContent = Math.floor(d / 6e4) % 60;
+  }
+  maj(); setInterval(maj, 30000);
+})();
+
+/* ---------- 3D carousel gallery ---------- */
+(() => {
+  const photos = REGLAGES.galerie, scene = document.getElementById('scene');
+  const compteur = document.getElementById('g-compteur');
+  let actuel = 0, minuteur;
+  const cartes = photos.map((src, i) => {
+    const d = document.createElement('div'); d.className = 'carte';
+    d.innerHTML = `<img src="${src}" alt="Souvenir ${i + 1}" loading="lazy">`;
+    d.addEventListener('click', () => i === actuel ? ouvrir(i) : aller(i));
+    scene.appendChild(d); return d;
+  });
+  function placer() {
+    const n = photos.length, large = innerWidth >= 860;
+    cartes.forEach((c, i) => {
+      let k = i - actuel; if (k > n / 2) k -= n; if (k < -n / 2) k += n;
+      const a = Math.abs(k), visible = a <= 3;
+      const x = k * (large ? 230 : 150), z = -a * 180, r = -k * 18, s = 1 - a * .06;
+      c.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${r}deg) scale(${s})`;
+      c.style.opacity = visible ? 1 - a * .22 : 0;
+      c.style.filter = a ? `brightness(${1 - a * .12})` : 'none';
+      c.style.zIndex = 100 - a;
+      c.style.pointerEvents = visible ? 'auto' : 'none';
+    });
+    compteur.textContent = `${actuel + 1} / ${n}`;
+  }
+  function aller(i) { actuel = (i + photos.length) % photos.length; placer(); relancer(); }
+  function relancer() { clearInterval(minuteur); minuteur = setInterval(() => aller(actuel + 1), 4000); }
+  document.getElementById('g-prec').onclick = () => aller(actuel - 1);
+  document.getElementById('g-suiv').onclick = () => aller(actuel + 1);
+  scene.addEventListener('mouseenter', () => clearInterval(minuteur));
+  scene.addEventListener('mouseleave', relancer);
+  let x0 = null;
+  scene.addEventListener('pointerdown', e => { x0 = e.clientX; });
+  scene.addEventListener('pointerup', e => {
+    if (x0 === null) return; const dx = e.clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) aller(actuel + (dx < 0 ? 1 : -1));
+  });
+  addEventListener('resize', placer);
+  placer(); relancer();
+
+  // Lightbox
+  const v = document.getElementById('visionneuse'), vimg = document.getElementById('v-img'); let vi = 0;
+  function ouvrir(i) { vi = (i + photos.length) % photos.length; vimg.src = photos[vi]; v.classList.add('ouverte'); clearInterval(minuteur); interrompre(); }
+  function fermer() { v.classList.remove('ouverte'); relancer(); }
+  v.querySelector('.fermer').onclick = fermer;
+  v.querySelector('.prec').onclick = e => { e.stopPropagation(); ouvrir(vi - 1); };
+  v.querySelector('.suiv').onclick = e => { e.stopPropagation(); ouvrir(vi + 1); };
+  v.addEventListener('click', e => { if (e.target === v) fermer(); });
+  addEventListener('keydown', e => {
+    if (!v.classList.contains('ouverte')) return;
+    if (e.key === 'Escape') fermer();
+    if (e.key === 'ArrowLeft') ouvrir(vi - 1);
+    if (e.key === 'ArrowRight') ouvrir(vi + 1);
+  });
+})();
+</script>
+</body>
+</html>
