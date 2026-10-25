@@ -214,6 +214,21 @@
   .visionneuse .prec { left: 6px; top: 50%; transform: translateY(-50%); }
   .visionneuse .suiv { right: 6px; top: 50%; transform: translateY(-50%); }
 
+  /* ---------- Family support ---------- */
+  .soutien { background: var(--ivory-dark); }
+  .soutien .intro { max-width: 640px; margin: 22px auto 0; text-align: center; font-size: 18px; color: var(--muted); }
+  .numeros { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 44px; }
+  .numero { width: min(340px, 100%); background: var(--ivory); padding: 32px 26px 28px; text-align: center; position: relative; border: 1px solid rgba(184,146,74,.45); }
+  .numero::before { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(184,146,74,.2); pointer-events: none; }
+  .numero .service { font-family: var(--serif); font-size: 14px; letter-spacing: .26em; text-transform: uppercase; color: var(--gold); }
+  .numero .tel { font-family: var(--serif); font-weight: 600; font-size: 32px; letter-spacing: .06em; color: var(--navy); margin-top: 8px; }
+  .numero button {
+    margin-top: 16px; font-family: var(--serif); font-size: 13px; letter-spacing: .22em; text-transform: uppercase;
+    background: var(--navy); color: var(--gold-light); border: none; padding: 11px 22px; cursor: pointer; transition: background .3s;
+  }
+  .numero button:hover { background: var(--navy-soft); }
+  .numero button.copie { background: var(--gold); color: var(--navy); }
+
   /* ---------- Verse ---------- */
   .verset { text-align: center; }
   .verset .croix { width: 46px; height: 70px; color: var(--gold-light); margin: 0 auto 30px; display: block; }
@@ -236,6 +251,49 @@
   .flottants .joue svg { animation: tourne 6s linear infinite; }
   @keyframes tourne { to { transform: rotate(360deg); } }
 
+  /* ---------- AI ornaments (ornements/*.png, shown only once loaded) ---------- */
+  .orn { display: none; position: absolute; pointer-events: none; user-select: none; }
+  .orn.pret { display: block; }
+  .bloc, .citation p, .merci p, .merci .signature { position: relative; z-index: 2; }
+  .merci { position: relative; overflow: hidden; }
+  .citation { overflow: hidden; }
+  .clair .orn, .clair.orn { filter: drop-shadow(0 3px 8px rgba(19,35,63,.18)); }
+  img.separateur { display: block; width: min(340px, 70vw); height: auto; margin: 10px auto 4px; }
+
+  .colombe-vol { width: clamp(90px, 16vw, 150px); top: 12%; z-index: 1; }
+  .colombe-vol.g { left: 14%; animation: arrive-g 2.6s .3s cubic-bezier(.2,.7,.2,1) both, plane 5s 2.9s ease-in-out infinite; }
+  .colombe-vol.d { right: 14%; animation: arrive-d 2.6s .5s cubic-bezier(.2,.7,.2,1) both, plane-d 5.5s 3.1s ease-in-out infinite; }
+  @keyframes arrive-g { from { opacity: 0; transform: translate(-40vw, 12vh) scale(.6) rotate(-10deg); } }
+  @keyframes arrive-d { from { opacity: 0; transform: scaleX(-1) translate(-40vw, 12vh) scale(.6) rotate(-10deg); } to { transform: scaleX(-1); } }
+  @keyframes plane { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-12px) rotate(-3deg); } }
+  @keyframes plane-d { 0%, 100% { transform: scaleX(-1) translateY(0) rotate(0); } 50% { transform: scaleX(-1) translateY(-12px) rotate(-3deg); } }
+
+  .arche-zone { position: relative; }
+  .cadre-floral { width: 152%; left: -26%; bottom: -14%; z-index: 2; }
+  .colombe-passe { width: clamp(70px, 9vw, 110px); top: 14%; left: 0; z-index: 1; opacity: 0; }
+  .demarre .colombe-passe { animation: traverse 26s 4s linear infinite; }
+  @keyframes traverse {
+    0% { transform: translate(-15vw, 10vh); opacity: 0; }
+    8% { opacity: .9; }
+    50% { transform: translate(50vw, -2vh); }
+    92% { opacity: .9; }
+    100% { transform: translate(115vw, 6vh); opacity: 0; }
+  }
+
+  .bouquet { width: clamp(110px, 15vw, 210px); z-index: 1; transform-origin: 0 60%; animation: balance 7s ease-in-out infinite alternate; }
+  .bouquet.g { left: 0; }
+  .bouquet.d { right: 0; transform-origin: 100% 60%; animation-name: balance-d; }
+  @keyframes balance { from { transform: rotate(-2deg); } to { transform: rotate(3deg); } }
+  @keyframes balance-d { from { transform: scaleX(-1) rotate(-2deg); } to { transform: scaleX(-1) rotate(3deg); } }
+
+  .coin { width: clamp(70px, 11vw, 130px); }
+  .coin.hg { top: 10px; left: 10px; }
+  .coin.hd { top: 10px; right: 10px; transform: scaleX(-1); }
+  .coin.bg { bottom: 10px; left: 10px; transform: scaleY(-1); }
+  .coin.bd { bottom: 10px; right: 10px; transform: scale(-1, -1); }
+
+  .colombe-verset { width: clamp(90px, 13vw, 150px); top: 40px; right: 8%; animation: plane 6s ease-in-out infinite; }
+
   /* ---------- Responsive ---------- */
   @media (max-width: 860px) {
     body { font-size: 17px; }
@@ -253,6 +311,11 @@
     .carte { width: 240px; height: 330px; margin: -165px 0 0 -120px; }
     .compte div { min-width: 68px; }
     .compte b { font-size: 30px; }
+    .bouquet { opacity: .5; }
+    .colombe-vol { top: 7%; }
+    .colombe-vol.g { left: 6%; }
+    .colombe-vol.d { right: 6%; }
+    .colombe-verset { top: 18px; right: 4%; }
   }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -299,6 +362,8 @@
 <!-- ===== Opening ===== -->
 <div class="ouverture" id="ouverture">
   <div class="cadre"></div>
+  <img class="orn colombe-vol g" data-orn="colombe" alt="">
+  <img class="orn colombe-vol d" data-orn="colombe" alt="">
   <div class="bougie" aria-hidden="true"><div class="halo"></div><div class="flamme"></div><div class="meche"></div><div class="cire"></div></div>
   <div class="surtitre">En mémoire de</div>
   <div class="papa" data-lettres>Papa</div>
@@ -313,8 +378,12 @@
 <section class="accueil" id="accueil">
   <div class="fond"></div>
   <div class="voile"></div>
+  <img class="orn colombe-passe" data-orn="colombe" alt="">
   <div class="contenu">
-    <div class="arche monte" style="--i:0"><img src="img/portrait.jpg" alt="Papa Robert TIEHI en tenue traditionnelle"></div>
+    <div class="arche-zone monte" style="--i:0">
+      <div class="arche"><img src="img/portrait.jpg" alt="Papa Robert TIEHI en tenue traditionnelle"></div>
+      <img class="orn cadre-floral" data-orn="cadre" alt="">
+    </div>
     <div class="slogan monte" style="--i:1">Une légende s'en est allée</div>
     <div class="papa monte" style="--i:2">Papa</div>
     <h1 class="nom monte" style="--i:2">Robert Tiehi</h1>
@@ -324,7 +393,8 @@
 </section>
 
 <!-- ===== Biography ===== -->
-<section id="vie">
+<section id="vie" class="clair">
+  <img class="orn bouquet g" data-orn="bouquet" alt="" style="top:40px">
   <div class="bloc">
     <div class="surtitre apparait" data-anim="haut">Sa vie</div>
     <h2 class="titre apparait" data-anim="haut" style="--i:1">Un homme de Facobly</h2>
@@ -375,12 +445,15 @@
 </section>
 
 <!-- ===== Quote ===== -->
-<section class="citation">
+<section class="citation clair">
+  <img class="orn coin hg" data-orn="coin" alt=""><img class="orn coin hd" data-orn="coin" alt="">
+  <img class="orn coin bg" data-orn="coin" alt=""><img class="orn coin bd" data-orn="coin" alt="">
   <p class="apparait" data-anim="zoom"><span class="guil">“</span>Tu as laissé une empreinte indélébile dans nos cœurs.<span class="guil">”</span></p>
 </section>
 
 <!-- ===== Faire-part ===== -->
-<section id="faire-part">
+<section id="faire-part" class="clair">
+  <img class="orn bouquet d" data-orn="bouquet" alt="" style="top:30px">
   <div class="bloc">
     <div class="surtitre apparait" data-anim="haut">Faire-part</div>
     <h2 class="titre apparait" data-anim="haut" style="--i:1">Avis de décès</h2>
@@ -455,7 +528,8 @@
 </section>
 
 <!-- ===== Gallery ===== -->
-<section class="galerie" id="galerie">
+<section class="galerie clair" id="galerie">
+  <img class="orn bouquet g" data-orn="bouquet" alt="" style="bottom:40px">
   <div class="bloc">
     <div class="surtitre apparait" data-anim="haut">Souvenirs</div>
     <h2 class="titre apparait" data-anim="haut" style="--i:1">Entouré des siens</h2>
@@ -476,8 +550,20 @@
   <button class="suiv" aria-label="Suivante"><svg><use href="#i-droite"/></svg></button>
 </div>
 
+<!-- ===== Family support ===== -->
+<section class="soutien clair" id="soutien">
+  <div class="bloc">
+    <div class="surtitre apparait" data-anim="haut">Solidarité</div>
+    <h2 class="titre apparait" data-anim="haut" style="--i:1">Soutenir la famille</h2>
+    <svg class="ornement apparait" data-anim="zoom" style="--i:2"><use href="#i-ornement"/></svg>
+    <p class="intro apparait" data-anim="haut" style="--i:3">Pour celles et ceux qui souhaitent accompagner la famille en cette période, vos contributions peuvent être envoyées aux numéros ci-dessous. Merci pour votre générosité.</p>
+    <div class="numeros" id="numeros"></div>
+  </div>
+</section>
+
 <!-- ===== Verse ===== -->
 <section class="sombre verset">
+  <img class="orn colombe-verset" data-orn="colombe-rameau" alt="">
   <div class="bloc">
     <svg class="croix apparait" data-anim="zoom"><use href="#i-croix"/></svg>
     <blockquote class="apparait" data-anim="haut" style="--i:1">« J'ai combattu le bon combat, j'ai achevé la course, j'ai gardé la foi. »</blockquote>
@@ -486,7 +572,8 @@
 </section>
 
 <!-- ===== Thanks ===== -->
-<footer class="merci">
+<footer class="merci clair">
+  <img class="orn coin hg" data-orn="coin" alt=""><img class="orn coin hd" data-orn="coin" alt="">
   <p class="apparait" data-anim="haut">La grande famille <b>TIEHI</b> vous remercie pour votre présence, vos prières, votre soutien et votre compassion en cette douloureuse circonstance.</p>
   <p class="priere apparait" data-anim="haut" style="--i:1">Que Dieu accueille son âme dans sa paix éternelle.</p>
   <div class="signature apparait" data-anim="zoom" style="--i:2">Repose en paix, Papa</div>
@@ -510,7 +597,30 @@ const REGLAGES = {
     'img/portrait-boubou.jpg',
   ],
   vitesseDefilement: [34, 46],               // px/s: small screens, large screens
+  soutien: [
+    { service: 'Wave · Orange Money', numero: '07790131107' },
+    { service: 'MTN Mobile Money', numero: '0504736342' },
+  ],
 };
+
+/* ---------- Family support numbers ---------- */
+(() => {
+  const groupe = n => n.length === 10 ? n.replace(/(\d{2})(?=\d)/g, '$1 ') : n;
+  const zone = document.getElementById('numeros');
+  REGLAGES.soutien.forEach(({ service, numero }, i) => {
+    const carte = document.createElement('div');
+    carte.className = 'numero apparait'; carte.dataset.anim = 'haut'; carte.style.setProperty('--i', i + 4);
+    carte.innerHTML = `<div class="service">${service}</div><div class="tel">${groupe(numero)}</div><button type="button">Copier le numéro</button>`;
+    const b = carte.querySelector('button');
+    b.addEventListener('click', () => {
+      navigator.clipboard.writeText(numero).then(() => {
+        b.textContent = 'Numéro copié'; b.classList.add('copie');
+        setTimeout(() => { b.textContent = 'Copier le numéro'; b.classList.remove('copie'); }, 2200);
+      }).catch(() => {});
+    });
+    zone.appendChild(carte);
+  });
+})();
 
 /* ---------- Letter-by-letter names ---------- */
 let l = 0;
@@ -523,6 +633,27 @@ const observateur = new IntersectionObserver(entrees => entrees.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add('vu'); observateur.unobserve(e.target); }
 }), { threshold: 0.12 });
 document.querySelectorAll('.apparait').forEach(el => observateur.observe(el));
+
+/* ---------- AI ornaments: shown only if ornements/<name>.png exists ---------- */
+const ornements = [...new Set([...document.querySelectorAll('[data-orn]')].map(el => el.dataset.orn).concat('separateur'))];
+ornements.forEach(nom => {
+  const test = new Image();
+  test.onload = () => {
+    if (nom === 'separateur') {
+      document.querySelectorAll('svg.ornement').forEach(svg => {
+        const img = document.createElement('img');
+        img.src = test.src; img.alt = '';
+        img.className = 'separateur ' + svg.getAttribute('class').replace('ornement', '').trim();
+        img.style.cssText = svg.style.cssText;
+        svg.replaceWith(img);
+        if (img.classList.contains('apparait') && !img.classList.contains('vu')) observateur.observe(img);
+      });
+      return;
+    }
+    document.querySelectorAll(`[data-orn="${nom}"]`).forEach(el => { el.src = test.src; el.classList.add('pret'); });
+  };
+  test.src = `ornements/${nom}.png`;
+});
 
 /* ---------- Opening ---------- */
 const musique = document.getElementById('musique');
